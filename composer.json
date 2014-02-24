@@ -1,0 +1,24 @@
+{
+    "name": "lightsuner/stack-ci",
+    "authors": [
+        {
+            "name": "LightSuner",
+            "email": "lightsuner@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "StackCI\\": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "stack/builder": "1.0.*@dev",
+        "stack/session": "1.0.*@dev",
+        "stack/url-map": "1.0.*@dev",
+        "stack/lazy-http-kernel": "1.0.*@dev",
+        "symfony/http-foundation": "~2.1",
+        "symfony/http-kernel": "~2.1"
+    },
+    "require-dev": {
+        "silex/silex": "~1.0@dev"
+    }
+}
