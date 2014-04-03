@@ -1,3 +1,2 @@
-/vendor/
-/codeigniter/
-/examples/public/
+/vendor
+composer.lock

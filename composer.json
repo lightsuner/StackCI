@@ -1,5 +1,5 @@
 {
-    "name": "lightsuner/stack-ci",
+    "name": "lightsuner/stack-codeigniter",
     "authors": [
         {
             "name": "LightSuner",
@@ -11,14 +11,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "stack/builder": "1.0.*@dev",
-        "stack/session": "1.0.*@dev",
-        "stack/url-map": "1.0.*@dev",
-        "stack/lazy-http-kernel": "1.0.*@dev",
         "symfony/http-foundation": "~2.1",
         "symfony/http-kernel": "~2.1"
-    },
-    "require-dev": {
-        "silex/silex": "~1.0@dev"
     }
 }
