@@ -1,5 +1,6 @@
 {
     "name": "lightsuner/stack-codeigniter",
+    "description": "This is an implementation of stackphp.com for CodeIgniter",
     "authors": [
         {
             "name": "LightSuner",
