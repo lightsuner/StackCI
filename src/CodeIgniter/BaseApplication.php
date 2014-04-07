@@ -297,7 +297,7 @@ class BaseApplication
      */
     protected function loadBaseController()
     {
-        require_once STACKCIEXTPATH . 'Core/BaseControllerLoader.php';
+        require_once STACKCIEXTPATH . 'core/BaseControllerLoader.php';
     }
 
 
@@ -515,8 +515,8 @@ class BaseApplication
      */
     protected function loadCommon()
     {
-        require(STACKCIEXTPATH . 'Core/Common.php');
-        require(BASEPATH . 'core/Common.php');
+        require(STACKCIEXTPATH . 'core/Common.php');
+        require(BASEPATH . 'CCommon.php');
     }
 
     /**
