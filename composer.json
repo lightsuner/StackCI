@@ -12,7 +12,7 @@
         "psr-4": { "StackCI\\": "src/" }
     },
     "require": {
-        "php": "~5.3.3",
+        "php": "~5.3",
         "symfony/http-foundation": "~2.1",
         "symfony/http-kernel": "~2.1"
     }
