@@ -23,11 +23,13 @@ Add stack-codeigniter in your composer.json:
     }
 }
 ````
-Now tell composer to download the bundle by running the command:
+Now tell composer to download the component by running the command:
 
+``` bash
 $ php composer.phar update lightsuner/stack-codeigniter
+````
 
-Composer will install the bundle to your project's vendor/lightsuner directory.
+Composer will install the component to your project's `vendor/lightsuner` directory.
 
 ##Usage
 
