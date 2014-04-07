@@ -4,7 +4,8 @@ use StackCI\CodeIgniter\Orig\Core\Output;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CI_Output extends Output {
+class CI_Output extends Output
+{
 
     /**
      * @var \Symfony\Component\HttpFoundation\Request

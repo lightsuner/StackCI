@@ -3,7 +3,8 @@
 use StackCI\CodeIgniter\Orig\Core\Config;
 use Symfony\Component\HttpFoundation\Request;
 
-class CI_Config extends Config{
+class CI_Config extends Config
+{
 
     /**
      * @var \Symfony\Component\HttpFoundation\Request
@@ -15,6 +16,7 @@ class CI_Config extends Config{
      */
     public function setRequest(Request $request)
     {
+
         $this->request = $request;
 
         /**
@@ -34,9 +36,10 @@ class CI_Config extends Config{
         return $this->request;
     }
 
-    function site_url($uri = '')
+    public function site_url($uri = '')
     {
         $uri = '/'.ltrim($uri, '/');
+
         return $this->request->getUriForPath($uri);
     }
 

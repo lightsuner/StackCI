@@ -5,7 +5,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Cookie;
 
-class CI_Input extends Input {
+class CI_Input extends Input
+{
 
     /**
      * @var Request
@@ -28,6 +29,16 @@ class CI_Input extends Input {
         $this->request = $request;
 
         return $this;
+    }
+
+    /**
+     * Get Request
+     *
+     * @return Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
     }
 
     /**

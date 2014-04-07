@@ -3,7 +3,8 @@
 use StackCI\CodeIgniter\Orig\Core\Exceptions;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class CI_Exceptions extends Exceptions{
+class CI_Exceptions extends Exceptions
+{
 
 
 

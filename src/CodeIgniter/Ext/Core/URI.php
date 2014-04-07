@@ -3,7 +3,8 @@
 use StackCI\CodeIgniter\Orig\Core\URI;
 use Symfony\Component\HttpFoundation\Request;
 
-class CI_URI extends URI{
+class CI_URI extends URI
+{
 
 
 	/**

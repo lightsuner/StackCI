@@ -3,7 +3,8 @@
 use StackCI\CodeIgniter\Orig\Core\Router;
 use Symfony\Component\HttpFoundation\Request;
 
-class CI_Router extends Router {
+class CI_Router extends Router
+{
 
 
 	/**

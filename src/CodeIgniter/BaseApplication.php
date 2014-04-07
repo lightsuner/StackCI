@@ -177,6 +177,12 @@ class BaseApplication
 
         $this->loadBaseController();
 
+
+        //For Modular Extensions - HMVC
+        if ($CFG instanceof \CI_Config && get_class($CFG) != 'CI_Config') {
+            $CFG->setRequest($request);
+        }
+
         $this->execute();
 
         $OUT->_display();
