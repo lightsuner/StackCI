@@ -516,7 +516,7 @@ class BaseApplication
     protected function loadCommon()
     {
         require(STACKCIEXTPATH . 'core/Common.php');
-        require(BASEPATH . 'CCommon.php');
+        require(BASEPATH . 'core/Common.php');
     }
 
     /**
