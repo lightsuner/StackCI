@@ -47,19 +47,6 @@ class Application extends BaseApplication implements HttpKernelInterface, Termin
             $response->setStatusCode($e->getStatusCode());
             $response->setContent($e->getMessage());
 
-        } catch (Exception $e) {
-
-            $response->setStatusCode(500);
-
-            if ((is_bool($catch) && $catch) ||
-                ($this->environment != 'production')
-            ) {
-                $response->setContent($e->getMessage() . '<pre>' . $e->getTraceAsString() . '</pre>');
-            }
-
-
-            $response->setContent($e->getMessage());
-
         }
 
         return $response;

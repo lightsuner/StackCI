@@ -8,6 +8,8 @@ use InvalidArgumentException;
 use DomainException;
 use RuntimeException;
 use Closure;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Exception;
 
 /**
  * Class BaseApplication
@@ -164,28 +166,38 @@ class BaseApplication
     {
         global $RTR, $OUT, $CFG, $IN;
 
-        // set request and response to Input object
-        $IN->setRequest($request)->setResponse($response);
-        // set request to config
-        $CFG->setRequest($request);
-
-        // set request to router
-        $RTR->_set_routing($request);
-
-        // set request and response to Output object
-        $OUT->setRequest($request)->setResponse($response);
-
-        $this->loadBaseController();
-
-
-        //For Modular Extensions - HMVC
-        if ($CFG instanceof \CI_Config && get_class($CFG) != 'CI_Config') {
+        try {
+            // set request and response to Input object
+            $IN->setRequest($request)->setResponse($response);
+            // set request to config
             $CFG->setRequest($request);
+
+            // set request to router
+            $RTR->_set_routing($request);
+
+            // set request and response to Output object
+            $OUT->setRequest($request)->setResponse($response);
+
+            $this->loadBaseController();
+
+
+            //For Modular Extensions - HMVC
+            if ($CFG instanceof \CI_Config && get_class($CFG) != 'CI_Config') {
+                $CFG->setRequest($request);
+            }
+
+            $this->execute();
+
+            $OUT->_display();
+        } catch (HttpException $e) {
+            throw $e;
+        } catch(Exception $e) {
+            $exceptionCatcher = load_class('ExceptionCatcher', 'core');
+            $exceptionCatcher->setException($e);
+
+            throw $exceptionCatcher->getHttpException();
         }
 
-        $this->execute();
-
-        $OUT->_display();
     }
 
     /**
