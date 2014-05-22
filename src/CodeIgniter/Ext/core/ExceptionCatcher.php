@@ -8,7 +8,7 @@
 use StackCI\Extension\ExceptionCatcherInterface;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class ExceptionCatcher implements ExceptionCatcherInterface
+class CI_ExceptionCatcher implements ExceptionCatcherInterface
 {
     /**
      * @var \Exception
