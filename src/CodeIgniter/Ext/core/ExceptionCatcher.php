@@ -40,7 +40,11 @@ class CI_ExceptionCatcher implements ExceptionCatcherInterface
                 $this->currentException->getTraceAsString() . '</pre>';
         }
 
-        return new HttpException($code, $message);
+        if ($this->currentException instanceof HttpException) {
+            $code = $this->currentException->getStatusCode();
+        }
+
+        return new HttpException($code, $message, $this->currentException);
     }
 
     /**
