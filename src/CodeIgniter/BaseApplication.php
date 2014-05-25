@@ -8,7 +8,6 @@ use InvalidArgumentException;
 use DomainException;
 use RuntimeException;
 use Closure;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Exception;
 
 /**
@@ -189,8 +188,6 @@ class BaseApplication
             $this->execute();
 
             $OUT->_display();
-        } catch (HttpException $e) {
-            throw $e;
         } catch(Exception $e) {
             $exceptionCatcher = load_class('ExceptionCatcher', 'core');
             $exceptionCatcher->setException($e);
