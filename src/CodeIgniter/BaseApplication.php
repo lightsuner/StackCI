@@ -190,6 +190,7 @@ class BaseApplication
             $OUT->_display();
         } catch(Exception $e) {
             $exceptionCatcher = load_class('ExceptionCatcher', 'core');
+            $exceptionCatcher->setEnvironment($this->environment);
             $exceptionCatcher->setException($e);
 
             throw $exceptionCatcher->getHttpException();
